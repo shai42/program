@@ -1,0 +1,343 @@
+#this is a python code to meet the requirements in the assignment, it's simple but long and includes an instance to check if the code works
+class Customer:
+    def __init__(self, customer_id, name, contact_info, order_history, payment_method, address):
+        #Initializes a new customer with basic details.
+        self.customer_id = customer_id
+        self.name = name
+        self.contact_info = contact_info
+        self.order_history = order_history
+        self.payment_method = payment_method
+        self.address = address
+
+    #The getters
+    def get_customer_id(self):
+        return self.customer_id
+    
+    def get_name(self):
+        return self.name
+    
+    def get_contact_info(self):
+        return self.contact_info
+    
+    def get_order_history(self):
+        return self.order_history
+    
+    def get_payment_method(self):
+        return self.payment_method
+    
+    def get_address(self):
+        return self.address
+    
+    #The setters
+    def set_customer_id(self, customer_id):
+        self.customer_id = customer_id
+    
+    def set_name(self, name):
+        self.name = name
+    
+    def set_contact_info(self, contact_info):
+        self.contact_info = contact_info
+    
+    def set_order_history(self, order_history):
+        self.order_history = order_history
+    
+    def set_payment_method(self, payment_method):
+        self.payment_method = payment_method
+    
+    def set_address(self, address):
+        self.address = address
+
+    #The methods
+    def place_order(self): #Places a new delivery order for the customer
+        pass
+    
+    def update_delivery_details(self): #Updates delivery details for the customer
+        pass
+    
+    def cancel_order(self): #Cancels the customer's order
+        pass
+    
+    def view_order_history(self): #Returns the customer's order history.
+        pass
+    
+    def make_payment(self): #Processes the payment for the order.
+        pass
+    
+    def track_order(self): #Tracks the current status of the order
+        pass
+
+class Order:
+    def __init__(self, order_id, recipient_details, delivery_address, ordered_items, status, payment_option, order_date):
+        #Initializes a new order with all necessary details.
+        self.order_id = order_id
+        self.recipient_details = recipient_details
+        self.delivery_address = delivery_address
+        self.ordered_items = ordered_items
+        self.status = status
+        self.payment_option = payment_option
+        self.order_date = order_date
+
+    #The getters
+    def get_order_id(self):
+        return self.order_id
+    
+    def get_recipient_details(self):
+        return self.recipient_details
+    
+    def get_delivery_address(self):
+        return self.delivery_address
+    
+    def get_ordered_items(self):
+        return self.ordered_items
+    
+    def get_status(self):
+        return self.status
+    
+    def get_payment_option(self):
+        return self.payment_option
+    
+    def get_order_date(self):
+        return self.order_date
+
+    #The setters
+    def set_order_id(self, order_id):
+        self.order_id = order_id
+    
+    def set_recipient_details(self, recipient_details):
+        self.recipient_details = recipient_details
+    
+    def set_delivery_address(self, delivery_address):
+        self.delivery_address = delivery_address
+    
+    def set_ordered_items(self, ordered_items):
+        self.ordered_items = ordered_items
+    
+    def set_status(self, status):
+        self.status = status
+    
+    def set_payment_option(self, payment_option):
+        self.payment_option = payment_option
+    
+    def set_order_date(self, order_date):
+        self.order_date = order_date
+
+    #The methods
+    def update_status(self): #Updates the status of the order.
+        pass
+
+    def generate_delivery_note(self): #Generates a delivery note for the order.
+        pass
+    
+    def calculate_total(self): #Calculates the total price for the order.
+        pass
+    
+    def cancel_order(self): #Cancels the order
+        pass
+    
+    def estimate_delivery_time(self): #Estimates the delivery time based on the current location and destination.
+        pass
+
+class DeliveryPersonnel:
+    def __init__(self, personnel_id, name, contact_info, assigned_orders, status, availability_status):
+        #Initializes a delivery personnel with necessary details.
+        self.personnel_id = personnel_id
+        self.name = name
+        self.contact_info = contact_info
+        self.assigned_orders = assigned_orders
+        self.status = status
+        self.availability_status = availability_status
+
+    #The getters
+    def get_personnel_id(self):
+        return self.personnel_id
+    
+    def get_name(self):
+        return self.name
+    
+    def get_contact_info(self):
+        return self.contact_info
+    
+    def get_assigned_orders(self):
+        return self.assigned_orders
+    
+    def get_status(self):
+        return self.status
+    
+    def get_availability_status(self):
+        return self.availability_status
+
+    #The setters
+    def set_personnel_id(self, personnel_id):
+        self.personnel_id = personnel_id
+    
+    def set_name(self, name):
+        self.name = name
+    
+    def set_contact_info(self, contact_info):
+        self.contact_info = contact_info
+    
+    def set_assigned_orders(self, assigned_orders):
+        self.assigned_orders = assigned_orders
+    
+    def set_status(self, status):
+        self.status = status
+    
+    def set_availability_status(self, availability_status):
+        self.availability_status = availability_status
+
+    #The methods
+    def mark_delivery_completed(self): #Marks a delivery as completed.
+        pass
+    
+    def update_location(self): #Updates the current location of the delivery personnel.
+        pass
+    
+    def update_availability(self): #Updates the availability status of the delivery personnel.
+        pass
+    
+    def contact_customer(self): #Contacts the customer to provide delivery updates.
+        pass
+    
+    def accept_order(self): #Accepts an order to deliver.
+        pass
+
+class EmployeeAdmin:
+    def __init__(self, employee_id, name, role, assigned_tasks, department, permissions):
+        #Initializes an employee/admin with necessary details.
+        self.employee_id = employee_id
+        self.name = name
+        self.role = role
+        self.assigned_tasks = assigned_tasks
+        self.department = department
+        self.permissions = permissions
+
+    #The getters
+    def get_employee_id(self):
+        return self.employee_id
+    
+    def get_name(self):
+        return self.name
+    
+    def get_role(self):
+        return self.role
+    
+    def get_assigned_tasks(self):
+        return self.assigned_tasks
+    
+    def get_department(self):
+        return self.department
+    
+    def get_permissions(self):
+        return self.permissions
+
+    #The setters
+    def set_employee_id(self, employee_id):
+        self.employee_id = employee_id
+    
+    def set_name(self, name):
+        self.name = name
+    
+    def set_role(self, role):
+        self.role = role
+    
+    def set_assigned_tasks(self, assigned_tasks):
+        self.assigned_tasks = assigned_tasks
+    
+    def set_department(self, department):
+        self.department = department
+    
+    def set_permissions(self, permissions):
+        self.permissions = permissions
+
+    #The methods
+    def assign_delivery_personnel(self): #Assigns delivery personnel to an order.
+        pass
+    
+    def generate_delivery_note(self): #Generates a delivery note for an order.
+        pass
+    
+    def manage_orders(self): #Manages orders in the system.
+        pass
+    
+    def modify_order(self): #Modifies an order if needed.
+        pass
+    
+    def track_all_deliveries(self): #Tracks all deliveries in the system.
+        pass
+
+class Item:
+    def __init__(self, item_id, name, quantity, price, stock):
+        #Initializes an item with necessary details.
+        self.item_id = item_id
+        self.name = name
+        self.quantity = quantity
+        self.price = price
+        self.stock = stock #added just because this task calls for 5 attributes minimum for each class
+
+    #The getters
+    def get_item_id(self):
+        return self.item_id
+    
+    def get_name(self):
+        return self.name
+    
+    def get_quantity(self):
+        return self.quantity
+    
+    def get_price(self):
+        return self.price
+
+    def get_stock(self):
+        return self.stock
+
+    #The setters
+    def set_item_id(self, item_id):
+        self.item_id = item_id
+    
+    def set_name(self, name):
+        self.name = name
+    
+    def set_quantity(self, quantity):
+        self.quantity = quantity
+    
+    def set_price(self, price):
+        self.price = price
+
+    def set_stock(self, stock):
+        self.stock = stock
+
+    #The methods
+    def get_total_price(self): #Returns the total price for this item (quantity * price).
+        pass
+
+#creating an instance of Customer
+customer1 = Customer(customer_id=1, name="Shai", contact_info="shai@gmail.com", 
+                      order_history=[], payment_method="Credit Card", address="13b street")
+
+#Creating an instance of Item
+item1 = Item(item_id=99, name="Wireless Keyboard", quantity=1, price=250, stock="avaliable")
+
+#Creating an instance of Order
+order1 = Order(order_id=9999, recipient_details="Shai", delivery_address="13b street",
+                ordered_items=[item1], status="Shipping", payment_option="Credit Card", order_date="2025-03-04")
+
+#Creating an instance of DeliveryPersonnel
+deliverypersonnel1 = DeliveryPersonnel(personnel_id=201, name="Ali", contact_info="Ali@gmail.com", 
+                                          assigned_orders=[order1], status="Available", availability_status="Available")
+
+#Creating an instance of EmployeeAdmin
+admin1 = EmployeeAdmin(employee_id=301, name="Ahmad", role="Admin", assigned_tasks=["Manage Orders"], 
+                        department="Management", permissions=["Full Access"])
+
+#Using methods
+customer1.place_order()  #Placing a new order for customer
+customer1.update_delivery_details()  #Updating delivery details for the customer
+customer1.view_order_history()  #Viewing the customer's order history
+
+#Outputting some details to check if the code works
+print(f"Customer Name: {customer1.get_name()}, Contact: {customer1.get_contact_info()}, Address: {customer1.get_address()}")
+print(f"Order ID: {order1.get_order_id()}, Status: {order1.get_status()}")
+print(f"Item Name: {item1.get_name()}, Quantity: {item1.get_quantity()}, Price: {item1.get_price()}")
+print(f"Delivery Personnel: {deliverypersonnel1.get_name()}, Status: {deliverypersonnel1.get_status()}")
+print(f"Admin Name: {admin1.get_name()}, Role: {admin1.get_role()}")
+
