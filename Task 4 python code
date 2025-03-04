@@ -1,0 +1,115 @@
+class Customer:
+    def __init__(self, customer_id, name, contact_info, order_history, payment_method, address):
+        self.customer_id = customer_id
+        self.name = name
+        self.contact_info = contact_info
+        self.order_history = order_history
+        self.payment_method = payment_method
+        self.address = address
+
+    def get_name(self):
+        return self.name
+    
+    def get_address(self):
+        return self.address
+
+    def get_contact_info(self):
+        return self.contact_info
+
+    def view_order_history(self):
+        return self.order_history
+
+
+class Item:
+    def __init__(self, item_id, name, quantity, price, stock):
+        self.item_id = item_id
+        self.name = name
+        self.quantity = quantity
+        self.price = price
+        self.stock = stock
+
+    def get_name(self):
+        return self.name
+
+    def get_quantity(self):
+        return self.quantity
+
+    def get_price(self):
+        return self.price
+
+    def get_total_price(self):
+        return self.quantity * self.price
+
+
+class Order:
+    def __init__(self, order_id, recipient_details, delivery_address, ordered_items, status, payment_option, order_date):
+        self.order_id = order_id
+        self.recipient_details = recipient_details
+        self.delivery_address = delivery_address
+        self.ordered_items = ordered_items
+        self.status = status
+        self.payment_option = payment_option
+        self.order_date = order_date
+
+
+#a standalone function to generate the delivery note
+def generate_delivery_note(order):
+    print("Delivery Note")
+    print("Thank you for using our delivery service! Please print your delivery receipt and present it upon receiving your items.\n")
+    
+    print("Recipient Details:")
+    print(f"Name: {order.recipient_details}")
+    print(f"Contact: sarah.johnson@example.com")  # Hardcoded for now
+    print(f"Delivery Address: {order.delivery_address}\n")
+    
+    print("Delivery Information:")
+    print(f"Order Number: {order.order_id}")
+    print(f"Reference Number: DN-2025-001")
+    print(f"Delivery Date: {order.order_date}")
+    print(f"Delivery Method: Courier")
+    print("Package Dimensions: |")
+    print(f"Total Weight: 7 kg\n")
+    
+    print("Summary of Items Delivered:")
+    print("Item Code | Description | Quantity | Unit Price (AED) | Total Price (AED)")
+    subtotal = 0
+    for item in order.ordered_items:
+        total_price = item.get_total_price()
+        subtotal += total_price
+        print(f"{item.item_id} | {item.name} | {item.quantity} | {item.price:.2f} | {total_price:.2f}")
+    
+    taxes = subtotal * 0.05  # Assuming 5% tax
+    total_charges = subtotal + taxes
+    
+    print(f"\nSubtotal: AED {subtotal:.2f}")
+    print(f"Taxes and Fees: AED {taxes:.2f}")
+    print(f"Total Charges: AED {total_charges:.2f}")
+
+
+#create object to print the same output as the figure in the assignment
+customer = Customer(
+    customer_id=1,
+    name="Sarah Johnson",
+    contact_info="sarah.johnson@example.com",
+    order_history=[],
+    payment_method="Credit Card",
+    address="45 Knowledge Avenue, Dubai, UAE"
+)
+
+order = Order(
+    order_id="DEL123456789",
+    recipient_details=customer.name,
+    delivery_address=customer.address,
+    ordered_items=[
+        Item(item_id="ITM001", name="Wireless Keyboard", quantity=1, price=100.00, stock=10),
+        Item(item_id="ITM002", name="Wireless Mouse & Pad Set", quantity=1, price=75.00, stock=15),
+        Item(item_id="ITM003", name="Laptop Cooling Pad", quantity=1, price=120.00, stock=5),
+        Item(item_id="ITM004", name="Camera Lock", quantity=3, price=15.00, stock=20)
+    ],
+    status="In Transit",
+    payment_option="Credit Card",
+    order_date="January 25, 2025"
+)
+
+#Generate the delivery note :D hopefully its the same one as the assignment
+generate_delivery_note(order)
