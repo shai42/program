@@ -315,7 +315,7 @@ customer1 = Customer(customer_id=1, name="Shai", contact_info="shai@gmail.com",
                       order_history=[], payment_method="Credit Card", address="13b street")
 
 #Creating an instance of Item
-item1 = Item(item_id=99, name="Wireless Keyboard", quantity=1, price=250, stock="avaliable")
+item1 = Item(item_id=99, name="Wireless Keyboard", quantity=1, price=250, stock="available")
 
 #Creating an instance of Order
 order1 = Order(order_id=9999, recipient_details="Shai", delivery_address="13b street",
